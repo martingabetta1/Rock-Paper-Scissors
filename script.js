@@ -1,23 +1,9 @@
 // rock papers scissors game
 
-let winCount = 0;
-let lossCount = 0;
-let tieCount = 0;
-const winCounthtml = document.querySelector("#win-counter");
-const lossCounthtml = document.querySelector("#loss-counter");
-const tieCounthtml = document.querySelector("#tie-counter");
-winCounthtml.textContent = `${winCount}`;
-lossCounthtml.textContent = `${lossCount}`;
-tieCounthtml.textContent = `${tieCount}`;
+document.querySelector("#rock").onclick = () => playRound("rock", getComputerChoice());
+document.querySelector("#paper").onclick = () => playRound("paper", getComputerChoice());
+document.querySelector("#scissors").onclick = () => playRound("scissors", getComputerChoice());
 
-const btnRock = document.querySelector("#rock");
-const btnPaper = document.querySelector("#paper");
-const btnScissors = document.querySelector("#scissors");
-const gameOutput = document.querySelector("#game-output");
-
-btnRock.onclick = () => playRound("rock", getComputerChoice());
-btnPaper.onclick = () => playRound("paper", getComputerChoice());
-btnScissors.onclick = () => playRound("scissors", getComputerChoice());
 
 // Computer random choice
 function getComputerChoice() {
@@ -27,21 +13,25 @@ function getComputerChoice() {
 }
 
 function win(playerChoice, computerChoice) {
-  gameOutput.textContent = `You won! ${playerChoice} beats ${computerChoice}.`;
-  winCount++;
-  winCounthtml.textContent = `${winCount}`;
+  document.querySelector(
+    "#game-output"
+  ).textContent = `You won! ${playerChoice} beats ${computerChoice}.`;
+  document.querySelector("#win-counter").textContent =
+    +document.querySelector("#win-counter").textContent + 1;
 }
 
 function fail(playerChoice, computerChoice) {
-  gameOutput.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
-  lossCount++;
-  lossCounthtml.textContent = `${lossCount}`;
+  document.querySelector(
+    "#game-output"
+  ).textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
+  document.querySelector("#loss-counter").textContent =
+    +document.querySelector("#loss-counter").textContent + 1;
 }
 
 function tie() {
-  gameOutput.textContent = "It's a tie!";
-  tieCount++;
-  tieCounthtml.textContent = `${tieCount}`;
+  document.querySelector("#game-output").textContent = "It's a tie!";
+  document.querySelector("#tie-counter").textContent =
+    +document.querySelector("#tie-counter").textContent + 1;
 }
 
 // Play a Round

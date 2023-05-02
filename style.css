@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  max-height: 100;
   font-family:"Poppins", "sans-serif";
 }
 
@@ -48,6 +47,8 @@ button:active {
 
 .counter-container{
     user-select: none;
+
+    margin-bottom: 50px;
     
     font-size: 36px;
     font-weight: bold;
