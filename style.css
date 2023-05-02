@@ -40,7 +40,9 @@ button:hover {
   border-color: #3bd62d;
 }
 button:active {
-  border-bottom: 2px solid #57eb4a;
+  background-color: #9eff95;
+  border-bottom: 3px solid;
+  border-color: #3bd62d;
 }
 
 .counter-container{
