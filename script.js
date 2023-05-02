@@ -1,9 +1,11 @@
 // rock papers scissors game
 
-document.querySelector("#rock").onclick = () => playRound("rock", getComputerChoice());
-document.querySelector("#paper").onclick = () => playRound("paper", getComputerChoice());
-document.querySelector("#scissors").onclick = () => playRound("scissors", getComputerChoice());
-
+document.querySelector("#rock").onclick = () =>
+  playRound("rock", getComputerChoice());
+document.querySelector("#paper").onclick = () =>
+  playRound("paper", getComputerChoice());
+document.querySelector("#scissors").onclick = () =>
+  playRound("scissors", getComputerChoice());
 
 // Computer random choice
 function getComputerChoice() {
@@ -12,6 +14,7 @@ function getComputerChoice() {
   return options[choice];
 }
 
+// Win output
 function win(playerChoice, computerChoice) {
   document.querySelector(
     "#game-output"
@@ -20,6 +23,7 @@ function win(playerChoice, computerChoice) {
     +document.querySelector("#win-counter").textContent + 1;
 }
 
+// Loss output
 function fail(playerChoice, computerChoice) {
   document.querySelector(
     "#game-output"
@@ -28,6 +32,7 @@ function fail(playerChoice, computerChoice) {
     +document.querySelector("#loss-counter").textContent + 1;
 }
 
+// Tie output
 function tie() {
   document.querySelector("#game-output").textContent = "It's a tie!";
   document.querySelector("#tie-counter").textContent =
@@ -58,3 +63,9 @@ function playRound(player, computer) {
     return fail(player, computer);
   }
 }
+
+// Ask to play again
+// function playAgain(winner){
+//   const againPrompt = document.createElement('div');
+//   againPrompt.classList.add()
+// }
